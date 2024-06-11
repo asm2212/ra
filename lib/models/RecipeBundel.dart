@@ -6,13 +6,13 @@ class RecipeBundle {
   final Color color;
 
   RecipeBundle(
-      {this.id,
-      this.chefs,
-      this.recipes,
-      this.title,
-      this.description,
-      this.imageSrc,
-      this.color});
+      {required this.id,
+      required this.chefs,
+      required this.recipes,
+      required this.title,
+      required this.description,
+      required this.imageSrc,
+      required this.color});
 }
 
 // Demo list

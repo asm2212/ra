@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/screens/home/home_screen.dart';
-import 'package:recipe_app/screens/profile/prrofile_screen.dart';
+import 'package:ra/screens/home/home_screen.dart';
+import 'package:ra/screens/profile/prrofile_screen.dart';
+
 
 class NavItem {
   final int id;
   final String icon;
   final Widget destination;
 
-  NavItem({this.id, this.icon, this.destination});
+  NavItem({required this.id, required this.icon, required this.destination});
 
 // If there is no destination then it help us
   bool destinationChecker() {
@@ -23,7 +24,7 @@ class NavItems extends ChangeNotifier {
   // By default first one is selected
   int selectedIndex = 0;
 
-  void chnageNavIndex({int index}) {
+  void chnageNavIndex({required int index}) {
     selectedIndex = index;
     // if any changes made it notify widgets that use the value
     notifyListeners();
@@ -37,15 +38,15 @@ class NavItems extends ChangeNotifier {
     ),
     NavItem(
       id: 2,
-      icon: "assets/icons/list.svg",
+      icon: "assets/icons/list.svg", destination: HomeScreen(),
     ),
     NavItem(
       id: 3,
-      icon: "assets/icons/camera.svg",
+      icon: "assets/icons/camera.svg", destination: HomeScreen(),
     ),
     NavItem(
       id: 4,
-      icon: "assets/icons/chef_nav.svg",
+      icon: "assets/icons/chef_nav.svg", destination: HomeScreen(),
     ),
     NavItem(
       id: 5,
