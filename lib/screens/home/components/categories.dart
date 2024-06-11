@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-// Our Category List need StateFullWidget
-// I can use Provider on it, Then we dont need StatefulWidget
-
 class Categories extends StatefulWidget {
   @override
   _CategoriesState createState() => _CategoriesState();
@@ -13,8 +10,9 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   List<String> categories = ["All", "Indian", "Italian", "Mexican", "Chinese"];
-  // By default first one is selected
+  // By default, the first one is selected
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,13 +22,13 @@ class _CategoriesState extends State<Categories> {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
-          itemBuilder: (context, index) => buildCategoriItem(index),
+          itemBuilder: (context, index) => buildCategoryItem(index),
         ),
       ),
     );
   }
 
-  Widget buildCategoriItem(int index) {
+  Widget buildCategoryItem(int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -41,15 +39,13 @@ class _CategoriesState extends State<Categories> {
         alignment: Alignment.center,
         margin: EdgeInsets.only(left: SizeConfig.defaultSize * 2),
         padding: EdgeInsets.symmetric(
-          horizontal: SizeConfig.defaultSize * 2, //20
-          vertical: SizeConfig.defaultSize * 0.5, //5
+          horizontal: SizeConfig.defaultSize * 2, // 20
+          vertical: SizeConfig.defaultSize * 0.5, // 5
         ),
         decoration: BoxDecoration(
-            color:
-                selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
-            borderRadius: BorderRadius.circular(
-              SizeConfig.defaultSize * 1.6, // 16
-            )),
+          color: selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent,
+          borderRadius: BorderRadius.circular(SizeConfig.defaultSize * 1.6), // 16
+        ),
         child: Text(
           categories[index],
           style: TextStyle(

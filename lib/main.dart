@@ -17,10 +17,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Recipe App',
         theme: ThemeData(
-          // backgroundColor: Colors.white,
+          // Set the default background color to white
           scaffoldBackgroundColor: Colors.white,
-          // We apply this to our appBarTheme because most of our appBar have this style
-          appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
+          // Apply a consistent style to app bars
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+            elevation: 0,
+          ),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: HomeScreen(),

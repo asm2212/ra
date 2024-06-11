@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 
+/// Model class representing a recipe bundle.
 class RecipeBundle {
-  final int id, chefs, recipes;
-  final String title, description, imageSrc;
+  final int id;
+  final int chefs;
+  final int recipes;
+  final String title;
+  final String description;
+  final String imageSrc;
   final Color color;
 
-  RecipeBundle(
-      {required this.id,
-      required this.chefs,
-      required this.recipes,
-      required this.title,
-      required this.description,
-      required this.imageSrc,
-      required this.color});
+  RecipeBundle({
+    required this.id,
+    required this.chefs,
+    required this.recipes,
+    required this.title,
+    required this.description,
+    required this.imageSrc,
+    required this.color,
+  });
 }
 
-// Demo list
+/// Demo list of recipe bundles.
 List<RecipeBundle> recipeBundles = [
   RecipeBundle(
     id: 1,
@@ -40,7 +46,7 @@ List<RecipeBundle> recipeBundles = [
     chefs: 10,
     recipes: 43,
     title: "Food Court",
-    description: "What's your favorite food dish make it now",
+    description: "What's your favorite food dish? Make it now",
     imageSrc: "assets/images/food_court@2x.png",
     color: Color(0xFF2DBBD8),
   ),

@@ -2,31 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:ra/screens/home/home_screen.dart';
 import 'package:ra/screens/profile/prrofile_screen.dart';
 
-
 class NavItem {
   final int id;
   final String icon;
   final Widget destination;
 
-  NavItem({required this.id, required this.icon, required this.destination});
+  NavItem({
+    required this.id,
+    required this.icon,
+    required this.destination,
+  });
 
-// If there is no destination then it help us
-  bool destinationChecker() {
-    if (destination != null) {
-      return true;
-    }
-    return false;
-  }
+  // Simplified the destinationChecker method
+  bool destinationChecker() => destination != null;
 }
 
 // If we made any changes here Provider package rebuid those widget those use this NavItems
 class NavItems extends ChangeNotifier {
-  // By default first one is selected
+  // By default, the first one is selected
   int selectedIndex = 0;
 
-  void chnageNavIndex({required int index}) {
+  void changeNavIndex({required int index}) {
     selectedIndex = index;
-    // if any changes made it notify widgets that use the value
+    // If any changes made it notify widgets that use the value
     notifyListeners();
   }
 
@@ -38,15 +36,18 @@ class NavItems extends ChangeNotifier {
     ),
     NavItem(
       id: 2,
-      icon: "assets/icons/list.svg", destination: HomeScreen(),
+      icon: "assets/icons/list.svg",
+      destination: HomeScreen(),
     ),
     NavItem(
       id: 3,
-      icon: "assets/icons/camera.svg", destination: HomeScreen(),
+      icon: "assets/icons/camera.svg",
+      destination: HomeScreen(),
     ),
     NavItem(
       id: 4,
-      icon: "assets/icons/chef_nav.svg", destination: HomeScreen(),
+      icon: "assets/icons/chef_nav.svg",
+      destination: HomeScreen(),
     ),
     NavItem(
       id: 5,

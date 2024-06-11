@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ra/size_config.dart';
 
 import 'info.dart';
 import 'profile_menu_item.dart';

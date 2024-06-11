@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ra/models/RecipeBundel.dart';
-
-
-import '../../../size_config.dart';
+import 'package:ra/size_config.dart';
 
 class RecipeBundelCard extends StatelessWidget {
   final RecipeBundle recipeBundle;
-  final Function press;
+  final VoidCallback press;
 
-  const RecipeBundelCard({Key key, required this.recipeBundle, required this.press})
+  const RecipeBundelCard({Key? key, required this.recipeBundle, required this.press})
       : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
-    // Now we dont this Aspect ratio
+
     return GestureDetector(
       onTap: press,
       child: Container(
@@ -22,7 +21,7 @@ class RecipeBundelCard extends StatelessWidget {
           color: recipeBundle.color,
           borderRadius: BorderRadius.circular(defaultSize * 1.8), //18
         ),
-        child: Row( 
+        child: Row(
           children: <Widget>[
             Expanded(
               child: Padding(
@@ -34,8 +33,9 @@ class RecipeBundelCard extends StatelessWidget {
                     Text(
                       recipeBundle.title,
                       style: TextStyle(
-                          fontSize: defaultSize * 2.2, //22
-                          color: Colors.white),
+                        fontSize: defaultSize * 2.2, //22
+                        color: Colors.white,
+                      ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -71,14 +71,14 @@ class RecipeBundelCard extends StatelessWidget {
                 fit: BoxFit.cover,
                 alignment: Alignment.centerLeft,
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Row buildInfoRow(double defaultSize, {required String iconSrc, text}) {
+  Row buildInfoRow(double defaultSize, {required String iconSrc, required String text}) {
     return Row(
       children: <Widget>[
         SvgPicture.asset(iconSrc),
@@ -88,7 +88,7 @@ class RecipeBundelCard extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
           ),
-        )
+        ),
       ],
     );
   }

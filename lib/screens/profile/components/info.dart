@@ -5,7 +5,7 @@ import '../../../size_config.dart';
 
 class Info extends StatelessWidget {
   const Info({
-    Key key,
+    Key? key,
     required this.name,
     required this.email,
     required this.image,

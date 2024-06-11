@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Ensure to use flutter_svg package
 import 'package:ra/components/my_bottom_nav_bar.dart';
 import 'package:ra/screens/home/components/body.dart';
 import 'package:ra/size_config.dart';
 
-
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    SizeConfig().init(context); // Initialize SizeConfig with context
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
-      // We are not able to BottomNavigationBar because the icon parameter dont except SVG
-      // We also use Provied to manage the state of our Nav
       bottomNavigationBar: MyBottomNavBar(),
     );
   }
@@ -24,8 +21,7 @@ class HomeScreen extends StatelessWidget {
         icon: SvgPicture.asset("assets/icons/menu.svg"),
         onPressed: () {},
       ),
-      // On Android by default its false
-      centerTitle: true,
+      centerTitle: true, // Center the title
       title: Image.asset("assets/images/logo.png"),
       actions: <Widget>[
         IconButton(
@@ -33,8 +29,7 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {},
         ),
         SizedBox(
-          // It means 5 because by out defaultSize = 10
-          width: SizeConfig.defaultSize * 0.5,
+          width: SizeConfig.defaultSize * 0.5, // 5
         )
       ],
     );
