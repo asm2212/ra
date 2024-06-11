@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/components/my_bottom_nav_bar.dart';
-import 'package:recipe_app/constants.dart';
-import 'package:recipe_app/screens/profile/components/body.dart';
-import 'package:recipe_app/size_config.dart';
+import 'package:ra/components/my_bottom_nav_bar.dart';
+import 'package:ra/screens/home/components/body.dart';
+import 'package:ra/size_config.dart';
+
 
 class ProfileScreen extends StatelessWidget {
   @override

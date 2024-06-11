@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/models/RecipeBundel.dart';
-import 'package:recipe_app/size_config.dart';
+import 'package:ra/models/RecipeBundel.dart';
+import 'package:ra/size_config.dart';
+
 
 import 'categories.dart';
 import 'recipe_bundel_card.dart';

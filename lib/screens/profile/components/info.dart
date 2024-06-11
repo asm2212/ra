@@ -6,9 +6,9 @@ import '../../../size_config.dart';
 class Info extends StatelessWidget {
   const Info({
     Key key,
-    this.name,
-    this.email,
-    this.image,
+    required this.name,
+    required this.email,
+    required this.image,
   }) : super(key: key);
   final String name, email, image;
 

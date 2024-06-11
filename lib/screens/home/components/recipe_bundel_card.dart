@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:recipe_app/models/RecipeBundel.dart';
+import 'package:ra/models/RecipeBundel.dart';
+
 
 import '../../../size_config.dart';
 
@@ -8,7 +9,7 @@ class RecipeBundelCard extends StatelessWidget {
   final RecipeBundle recipeBundle;
   final Function press;
 
-  const RecipeBundelCard({Key key, this.recipeBundle, this.press})
+  const RecipeBundelCard({Key key, required this.recipeBundle, required this.press})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class RecipeBundelCard extends StatelessWidget {
     );
   }
 
-  Row buildInfoRow(double defaultSize, {String iconSrc, text}) {
+  Row buildInfoRow(double defaultSize, {required String iconSrc, text}) {
     return Row(
       children: <Widget>[
         SvgPicture.asset(iconSrc),

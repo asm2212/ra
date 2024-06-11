@@ -7,9 +7,9 @@ import '../../../size_config.dart';
 class ProfileMenuItem extends StatelessWidget {
   const ProfileMenuItem({
     Key key,
-    this.iconSrc,
-    this.title,
-    this.press,
+    required this.iconSrc,
+    required this.title,
+    required this.press,
   }) : super(key: key);
   final String iconSrc, title;
   final Function press;
