@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart'; // Updated import for the SVG package
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ra/constants.dart';
 import 'package:ra/models/NavItem.dart';
@@ -35,7 +35,7 @@ class MyBottomNavBar extends StatelessWidget {
                 isActive: navItems.selectedIndex == index,
                 icon: navItems.items[index].icon,
                 press: () {
-                  navItems.chnageNavIndex(index: index);
+                  navItems.changeNavIndex(index: index); // Corrected typo here
                   // Ensure the destination exists before navigating
                   if (navItems.items[index].destinationChecker()) {
                     Navigator.push(

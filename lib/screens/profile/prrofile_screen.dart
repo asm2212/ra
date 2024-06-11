@@ -7,7 +7,7 @@ import 'package:ra/size_config.dart';
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    SizeConfig().init(context); // Initialize SizeConfig with context
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
@@ -22,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
       centerTitle: true,
       title: Text("Profile"),
       actions: <Widget>[
-        TextButton( // Changed FlatButton to TextButton
+        TextButton(
           onPressed: () {},
           child: Text(
             "Edit",
