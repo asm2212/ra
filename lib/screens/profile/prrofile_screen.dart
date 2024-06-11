@@ -4,7 +4,6 @@ import 'package:ra/constants.dart';
 import 'package:ra/screens/home/components/body.dart';
 import 'package:ra/size_config.dart';
 
-
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,11 +19,10 @@ class ProfileScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: kPrimaryColor,
       leading: SizedBox(),
-      // On Android it's false by default
       centerTitle: true,
       title: Text("Profile"),
       actions: <Widget>[
-        FlatButton(
+        TextButton( // Changed FlatButton to TextButton
           onPressed: () {},
           child: Text(
             "Edit",
